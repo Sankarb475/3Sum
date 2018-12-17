@@ -1,11 +1,13 @@
 import scala.collection.mutable.ArrayBuffer
 
-object ThreeSum {
-    def threeSum(nums: Array[Int]): List[List[Int]] = {
+object Solution {
+    def threeSum(nums: Array[Int]) : List[List[Int]] = {
         val len = nums.length
-        if(len < 3) return List(nums.toList)
-        var arr : ArrayBuffer[Int] = ArrayBuffer()
         var outputList : ArrayBuffer[List[Int]] = ArrayBuffer()
+        var result = List[List[Int]]()
+        if(len < 3) {result}
+        else{
+        var arr : ArrayBuffer[Int] = ArrayBuffer()
         for(a <- 0 until len){
             for(b<-a+1 until len){
                 for(c <- b+1 until len){
@@ -23,7 +25,8 @@ object ThreeSum {
             }
         }
         val outputList1 = duplicateCheck(outputList.toList)
-        return outputList1
+        outputList1
+        }
     }
     
     def sumCheck(arr : ArrayBuffer[Int]) : Boolean = {
