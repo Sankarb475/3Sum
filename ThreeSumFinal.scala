@@ -1,4 +1,4 @@
-object Solution {
+object ThreeSumFinal {
     def threeSum(nums: Array[Int]): List[List[Int]] = {    
         val N = nums.sorted
         var result = List[List[Int]]()
