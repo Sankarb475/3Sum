@@ -12,15 +12,11 @@ object Solution {
             for(b<-a+1 until len){
                 for(c <- b+1 until len){
                     arr.append(nums(a),nums(b),nums(c))
-                    //println(arr)
-                    var arrPart : ArrayBuffer[Int] = arr
-                    if(sumCheck(arrPart)){
-                        outputList.append(arrPart.toList)
-                        arr = ArrayBuffer()
+                    if(sumCheck(arr)){
+                        outputList.append(arr.toList)
                     }
-                    else{
-                      arr = ArrayBuffer()
-                    }
+                    arr = ArrayBuffer()
+                    
                 }
             }
         }
@@ -36,12 +32,10 @@ object Solution {
     
     def duplicateCheck(inParam : List[List[Int]]) : List[List[Int]] = {
       val len = inParam.length
-      //println(inParam)
       val finalList : ArrayBuffer[List[Int]] = ArrayBuffer(List())
       for(a <- 0 until len){
         finalList.append(inParam(a).sorted)
       }
-      //println(finalList)
       return finalList.distinct.toList.slice(1,finalList.length)
     }
 }
